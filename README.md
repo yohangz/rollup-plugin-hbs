@@ -16,11 +16,11 @@ Minimal handlebars template bundle rollup plugin based on [rollup-plugin-handleb
 
 Via [Yarn](https://yarnpkg.com/lang/en/)
 
-```yarn add rollup-plugin-hbs --save```
+```yarn add rollup-plugin-hbs --save-dev```
 
 Via [NPM](https://www.npmjs.com/)
 
-```npm install rollup-plugin-hbs --save```
+```npm install rollup-plugin-hbs --save-dev```
 
 ## Usage
 
