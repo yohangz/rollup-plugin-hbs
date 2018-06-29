@@ -1,5 +1,8 @@
 # rollup-plugin-hbs changelog
 
+## 1.0.3
+* Fix copy package peer dependency include logic
+
 ## 1.0.2
 * Fix release target file missing issue
 
