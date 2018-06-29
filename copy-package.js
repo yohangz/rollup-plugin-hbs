@@ -1,7 +1,7 @@
 const { readJsonSync, writeJsonSync, copySync } = require('fs-extra');
 const packageJson = readJsonSync('./package.json');
 
-if (packageJson.dependencies) {
+if (Object.keys(packageJson.dependencies).length) {
   packageJson.peerDependencies = packageJson.dependencies;
 }
 
