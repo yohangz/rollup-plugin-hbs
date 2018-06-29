@@ -1,5 +1,8 @@
 # rollup-plugin-hbs changelog
 
+## 1.0.2
+* Fix release target file missing issue
+
 ## 1.0.1
 * Add readme to NPM registry
 
