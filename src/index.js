@@ -13,6 +13,7 @@ import path from 'path';
  *  @param {Object=} options.handlebars.options - Options to pass to Handlebars' parse and precompile
  *     steps.
  *  @param {Boolean=true} options.handlebars.options.sourceMap - Whether to generate sourcemaps.
+ *  @param {Boolean=true} options.handlebars.optimize - Remove newline and whitespace characters from compiled output.
  *  @param {String='.hbs'} templateExtension - The file extension of your templates.
  *  @param {Function=} isPartial - A function that can determine whether or not a template is a
  *    partial. Defaults to determining if the template's name is prefixed with a '_'.
@@ -27,7 +28,8 @@ export default (options) => {
   }, options);
 
   options.handlebars = Object.assign({
-    id: (typeof options.handlebars === 'string') ? options.handlebars : 'handlebars/runtime'
+    id: (typeof options.handlebars === 'string') ? options.handlebars : 'handlebars/runtime',
+    optimize: true
   }, options.handlebars);
 
   options.handlebars.options = Object.assign({
@@ -39,7 +41,7 @@ export default (options) => {
       if (!id.endsWith(options.templateExtension)) return;
 
       const name = id.split('/').pop();
-      const tree = Handlebars.parse(code, options.handlebars.options);
+      const tree = Handlebars.parse(options.handlebars.optimize? code.replace(/\n(\s+)/g, ''): code, options.handlebars.options);
 
       const precompileOptions = options.handlebars.options;
       if (precompileOptions.sourceMap && !precompileOptions.srcName) {

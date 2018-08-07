@@ -45,7 +45,10 @@ export default {
         options: {
             // Whether to generate sourcemaps for the templates
           sourceMap: true // Default: true
-        }
+        },
+        
+        // Whether to remove newline and whitespace characters from compiled output.
+        optimize: true
       },
         
       // In case you want to compile files with other extensions.
