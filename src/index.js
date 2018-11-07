@@ -1,3 +1,4 @@
+import { createFilter } from 'rollup-pluginutils';
 import Handlebars from 'handlebars';
 import path from 'path';
 
@@ -36,9 +37,11 @@ export default (options) => {
     sourceMap: true
   }, options.handlebars.options);
 
+  const filter = createFilter(`**/*${options.templateExtension}`, options.exclude || 'node_modules/**');
+
   return {
     transform(code, id) {
-      if (!id.endsWith(options.templateExtension)) return;
+      if (!filter(id)) return;
 
       const name = id.split('/').pop();
       const tree = Handlebars.parse(options.handlebars.optimize? code.replace(/\n(\s+)/g, ''): code, options.handlebars.options);
