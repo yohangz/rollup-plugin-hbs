@@ -43,7 +43,7 @@ export default (options) => {
     transform(code, id) {
       if (!filter(id)) return;
 
-      const name = id.split('/').pop();
+      const name = path.basename(id); //getting the filename of the handlebar template
       const tree = Handlebars.parse(options.handlebars.optimize? code.replace(/\n(\s+)/g, ''): code, options.handlebars.options);
 
       const precompileOptions = options.handlebars.options;
