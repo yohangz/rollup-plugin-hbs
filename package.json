@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-hbs",
   "description": "Handlebars template bundle rollup plugin",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "rollup-plugin-hbs.js",
   "module": "rollup-plugin-hbs.es.js",
   "jsnext:main": "rollup-plugin-hbs.es.js",
