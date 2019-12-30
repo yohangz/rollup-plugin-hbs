@@ -14,7 +14,7 @@
     "release": "npm publish dist"
   },
   "dependencies": {
-    "handlebars": "^4.2.0",
+    "handlebars": "^4.5.3",
     "rollup": ">=0.62.0",
     "rollup-pluginutils": "^2.8.1"
   },
